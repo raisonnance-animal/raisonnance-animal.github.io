@@ -1,0 +1,653 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9LHX9PDKHY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9LHX9PDKHY');
+</script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>RAISONNANCE</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- GOOGLE Map -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      let map;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: -34.397, lng: 150.644 },
+          zoom: 8,
+        });
+      }
+    </script>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bracket/jquery.bracket.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['gantt']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Task ID');
+      data.addColumn('string', 'Task Name');
+      data.addColumn('string', 'Resource');
+      data.addColumn('date', 'Start Date');
+      data.addColumn('date', 'End Date');
+      data.addColumn('number', 'Duration');
+      data.addColumn('number', 'Percent Complete');
+      data.addColumn('string', 'Dependencies');
+
+      data.addRows([
+        ['0', 'Sélection des sites', 'Sites',
+         new Date(2019, 1, 1), new Date(2019, 1, 30), null, 100, null],
+        ['1', 'Instrumentation des sites', 'Sites',
+         new Date(2019, 1, 1), new Date(2019, 6, 1), null, 20, null],
+        ['2', 'Suivi des sites (analyses et mesures)', 'Sites',
+         new Date(2019, 3, 1), new Date(2023, 1,1), null, 20, null],
+        ['3', 'Création du modèle hydrologique et géochimique', 'Volet hydrologique',
+         new Date(2019, 1, 1), new Date(2022, 1,1), null, 80, null],
+        ['4', 'Identification des facteurs hydrologiques', 'Volet hydrologique',
+         new Date(2020, 9, 1), new Date(2023, 1,1), null, 70, null],
+        ['5', 'Simulations des modèles par site', 'Volet hydrologique',
+         new Date(2020, 6, 1), new Date(2023, 1,1), null, 40, null],
+        ['6', 'Typologie des territoires par vulnérabilité', 'Volet typologie',
+         new Date(2020, 1, 1), new Date(2023, 1,1), null, 20, null],
+        ['7', 'Simulations socio-économiques par usage', 'Volet socio-eco',
+         new Date(2022, 9, 1), new Date(2023, 1,1), null, 10, null],
+         ['8', 'Analyse des perceptions sociétales', 'Volet socio-eco',
+         new Date(2020, 1, 1), new Date(2023, 1,1), null, 10, null],
+         ['9', "Proposition de stratégies d'adapatation", 'Volet adapatation',
+         new Date(2022, 9, 1), new Date(2023, 1,1), null, 0, null],
+         ['10', "Livrable n°1: Implantation des piézomètres", 'Livrables',
+         new Date(2020, 10, 1), new Date(2020, 11,1), null, 100, '0'],
+         ['11', "Livrable n°2: Facteurs de contrôle", 'Livrables',
+         new Date(2021, 6, 1), new Date(2021, 7,1), null, 50, '4'],
+         ['12', "Livrable n°3: Processus d'extrapolation", 'Livrables',
+         new Date(2021, 9, 1), new Date(2021, 10,1), null, 20, '5'],
+         ['13', "Livrable n°4: Cartographie SIG ", 'Livrables',
+         new Date(2022, 1, 1), new Date(2022, 2,1), null, 0, '6'],
+         ['14', "Livrable n°5: Simulations socio-économiques", 'Livrables',
+         new Date(2023, 1, 1), new Date(2023, 2,1), null, 0, '7'],
+         ['15', "Livrable n°6: Analyse des perceptions sociétales", 'Livrables',
+         new Date(2022, 1, 1), new Date(2022, 2,1), null, 0, '8']
+         ]);
+
+      var options = {
+        height: 550,
+        gantt: {
+          trackHeight: 30,
+        },  
+      };
+
+      var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex flex-column justify-content-center">
+    <nav class="nav-menu">
+      <ul>
+        <li class="active"><a href="#hero"><i class="bx bx-water"></i> <span>RAISONNANCE</span></a></li>
+        <li><a href="#resume"><i class="bx bx-list-ul"></i> <span>Présentation</span></a></li>
+        <li><a href="#animaux"><i class="bx bxs-dog"></i> <span>Animaux</span></a></li>
+        <li><a href="#formations"><i class="bx bx-loader-circle"></i> <span>Formations</span></a></li>
+        <li><a href="#lieu"><i class="bx bx-map"></i> <span>Lieu d'acceuil</span></a></li>
+        <li><a href="#axes"><i class="bx bx-book-open"></i> <span>Axes de travail</span></a></li>
+        <li><a href="#contact"><i class="bx bx-chat"></i> <span>Contact</span></a></li>
+      </ul>
+    </nav><!-- .nav-menu -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container" data-aos="zoom-in" data-aos-delay="50" >
+      <img src="assets/img/Logo_Nath.png" class="testimonial-img" style="height:250px; margin:20px;" alt="">
+      <h1></h1>
+      <h2>Nathalie Gauvain</h2>
+      <h2>Chargé de projet en médiation par l'animal</h2>
+      <p>En collaboration avec mes animaux, Raisonnance permet
+      <span class="typed" data-typed-items="de révéler et gérer les émotions., de cultiver le bien-être., de renforcer des compétences sociales., d'accompagner face à des troubles spécifiques."></span></p>
+      <p data-aos-delay="100">
+      <a href="https://www.agatea.org/" target="_blank" title="Lien vers FIMAC">
+        <img src="assets/img/AGATEA.png" class="testimonial-img" style="height:160px; margin:20px;" alt="FIMAC">
+      </a>
+      <a href="https://www.fimaccanin.fr/" target="_blank" title="Lien vers FIMAC">
+        <img src="assets/img/FIMAC.png" class="testimonial-img" style="height:160px; margin:20px;" alt="FIMAC">
+      </a>
+      <a href="https://www.mfr-guilliers.fr/" target="_blank" title="Lien vers FIMAC">
+        <img src="assets/img/ACACED.png" class="testimonial-img" style="height:160px; margin:20px;" alt="FIMAC">
+      </a>
+      
+
+</p>
+	<!--
+      <div class="social-links">
+        <a href="https://" target=social class="twitter"><i class="bx bxl-twitter"></i></a>     
+        <a href="https://" target=social  class="twitch"><i class="bx bxl-twitch"></i></a>
+        <a href="https://" target=social  class="youtube"><i class="bx bxl-youtube"></i></a>
+        <a href="https://" target=social  class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://" target=social  class="discord"><i class="bx bxl-discord"></i></a>
+     
+      </div>
+    -->
+  </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="genones" style='min-height:100vh;'>
+
+<style>
+	.testimonial-img {
+    height: 120px;
+    border-radius: 1%;
+    margin:0;
+    padding:0;
+ 
+}
+
+.genone-item > h3 { 
+}
+
+.left {
+  float: left;
+}
+
+</style>
+
+      <div class="container" data-aos="fade-up" >
+
+        <div class="section-title">
+          <h2>PRéSENTATION</h2>
+          <p class="text-justify d-flex align-items-center">
+              <img src="assets/img/23290-COLLAGE.jpg" class="left" style="height:600px; margin:10px"; alt="">
+              Mon parcours reflète une trajectoire multidisciplinaire où se croisent artisanat, pédagogie et entrepreneuriat, guidée par une quête constante d’innovation et d’excellence.<br><br>
+
+Après plusieurs années en tant que coiffeuse, j’ai choisi de relever un nouveau défi : la création de mon propre salon de coiffure. Cette expérience en tant que cheffe d’entreprise m’a permis de développer des compétences . Elle a été le premier jalon d’une carrière marquée par l’indépendance et l’adaptabilité. <br><br>
+Animée par l’envie de partager mon savoir-faire, je me suis tournée vers l’enseignement. En tant que formatrice et coordinatrice dans le domaine de la coiffure, j’ai accompagné de nombreux élèves dans leur apprentissage technique et humain. J’ai également participé à l’organisation de concours professionnels et d’événements extérieurs, mettant en lumière la créativité et le dynamisme de cette profession.  <br> <br>
+
+Forte de mon expérience dans les relations humaines, j’ai entamé une reconversion vers la médiation par l’animal et les sciences comportementales. Cette transition m’a conduite à approfondir ma compréhension des interactions entre les émotions, le cerveau et les comportements, grâce à une formation en neuro-bio comportementalisme.  <br><br>
+
+J’ai également obtenu les certifications nécessaires à cette nouvelle activité, notamment l’ACACED pour le travail avec les chiens, chats et petits mammifères. Mon parcours s’est enrichi d’une formation avec Agatéa, aboutissant à mon diplôme de Chargée de projet en médiation par l’animal.  <br><br>
+ 
+Aujourd’hui, mon expertise repose sur une combinaison unique de compétences techniques, pédagogiques et relationnelles. Que ce soit à travers des séances de médiation par l’animal ou des projets éducatifs, je place l’accompagnement humain au cœur de mon engagement. Mon parcours témoigne de ma capacité à m’adapter, à innover et à répondre aux besoins spécifiques de mes interlocuteurs, avec une approche toujours bienveillante et rigoureuse. </p>
+        </div>
+        
+       
+
+    </section><!-- End Resume Section -->
+
+    <!-- ======= Sites Section ======= -->
+    <section id=animaux class="genones" style="min-height:100vh;">
+
+      <div class="container aos-init aos-animate" data-aos="fade-up">
+        <div class="section-title" >
+            <h2>Mes animaux d'accompagnement</h2>
+        </div>
+        <div class="row">
+  <div class="col-lg-12 d-flex justify-content-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+    <div id="genone-filter" class="btn-group" role="group" aria-label="Filter Buttons">
+      <button type="button" class="btn custom-btn showMoi me-2" data-filter="presentation">Présentation de l'équipe</button>
+      <button type="button" class="btn custom-btn showMoi me-2" data-filter="chien">Pearl & Tess</button>
+      <button type="button" class="btn custom-btn showMoi me-2" data-filter="chat">Méo & Ramses</button>
+      <button type="button" class="btn custom-btn showMoi me-2" data-filter="cochon">Gaspard & Balthazar</button>
+      <button type="button" class="btn custom-btn showMoi me-2" data-filter="oiseau">Coco</button>
+      <button type="button" class="btn custom-btn showMoi" data-filter="lapin">Cascade & Praline</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .custom-btn {
+    background-color: #006400;
+    color: white;
+    border: none;
+  }
+  .custom-btn:hover {
+    background-color: #006400;
+  }
+</style>
+
+ <span class="showMoiCt presentationct aos-init aos-animate" data-aos="fade-up" data-aos-delay="110">
+
+          <div class="section-title d-flex align-items-center">
+  <img src="assets/img/IMG_0076.jpg" class="testimonial-img" style="height:500px; margin-right:20px;" alt="">
+  <div>
+    <p class="text-justify">
+      <b>Respect des besoins de l'humain et des animaux</b></br>
+Pour RAISONNANCE, le bien-être de l'humain ne doit pas se faire au détriment de celui de l'animal. De ce fait, RAISONNANCE met tout en oeuvre pour participer aussi bien au bien-être de l'humain que de ses partenaires animaliers lors des séances de médiation animale.</br></br>
+
+    </p>
+    <p class="text-justify">
+     <b>Une équipe est sélectionnés et éduqués</b></br>
+Les chiens de l'équipe de RAISONNANCE ont suivi une évaluation rigoureuse sur plusieurs jours afin de déterminer leur aptitude à travailler en médiation animale et le public avec lequel ils sont le plus à l'aise.</br></br>
+    </p>
+    <p class="text-justify">
+     <b>Séances personnalisables</b></br>
+Vous souhaitez travailler des objectifs précis en médiation animale ? Certaines idées d’activités vous plaisent plus que d’autres ? Vous souhaitez créer votre propre programme personnalisé ? RAISONNANCE est à votre écoute !
+    </p>
+  </div>
+</div>
+</span>
+
+        <span class="showMoiCt chienct" style="display:none;">
+
+          <div class="container d-flex align-items-center">
+  <img src="assets/img/image0000061.jpg" class="testimonial-img" style="height:550px; margin-right:20px;" alt="">
+  <div>
+    <p class="text-justify">
+      </br>D'une nature incroyablement douce et patiente, Pearl (à droite sur la photo) est une compagne idéale pour les enfants. Sa gentillesse et son intelligence lui permettent d'apprendre rapidement et d'adapter son comportement à chaque situation. Elle est extrêmement réceptive, ce qui fait d’elle une partenaire exceptionnelle dans le cadre de la médiation par l’animal. Son amour pour les enfants est particulièrement touchant : elle sait apaiser, écouter et créer des liens solides, apportant réconfort et sérénité. Sa présence est toujours un gage de confiance et de bien-être, faisant d'elle une alliée précieuse dans toute interaction humaine, qu'elle soit éducative, thérapeutique ou simplement ludique. </br></br>
+
+    </p>
+    <p class="text-justify">
+      Tess (à gauche), chienne berger Shetland au tempérament joyeux et dynamique, est un véritable concentré de bonheur. Sa robe bleu merle, aux nuances subtiles de gris et de blanc, et ses yeux d’un bleu éclatant ajoutent à son charme unique.  
+
+Toujours de bonne humeur, Tess rayonne de joie de vivre. Elle apporte une énergie positive et communicative qui illumine chaque pièce qu'elle traverse. Sa délicatesse et sa sensibilité font d'elle une compagne attentive et bienveillante, capable de percevoir les émotions des autres et d'y répondre avec douceur.  
+
+Tess est une chienne constamment prête à travailler. Son enthousiasme et son désir d'apprendre sont sans fin, ce qui en fait une partenaire parfaite pour toute activité, qu'elle soit éducative ou ludique. Elle apprécie particulièrement l’écoute de la lecture, semblant saisir chaque mot avec une attention toute particulière, ajoutant une touche magique à ce moment d'échange.  
+
+Avec Tess, chaque moment est une invitation à la découverte, à l'apprentissage et à la complicité. </br>
+    </p>
+    <div class="section-title d-flex align-items-center">
+<img src="assets/img/logo-central.png" class="testimonial-img" style="height:100px; margin-right:20px;" alt="">
+  <div>
+    <p class="text-justify">
+      <a href="https://www.centrale-canine.fr/lofselect/chien/pearl-des-terres-dael-7201325">Pearl des Terres d'Ael</a>
+    </p>
+    <p class="text-justify">
+       <a href="https://www.centrale-canine.fr/lofselect/chien/tess-8068727">Tess des Terres Celtes Enchantées</a>
+    </p>
+  </div>
+</div>
+  </div>
+</div>
+        </span>
+      </div>
+
+    <span class="showMoiCt chatct" style="display:none;">
+      <div class="container d-flex align-items-center" data-aos="fade-up" >
+  <img src="assets/img/meo.jpeg" class="testimonial-img" style="height:400px; margin-right:20px;" alt="">
+  <img src="assets/img/IMG_4095.jpg" class="testimonial-img" style="height:400px; margin-right:20px;" alt="">
+  <div>
+    <p class="text-justify">
+      Ensemble, Méo et Ramsès forment un duo équilibré et complémentaire, qui permet de
+proposer des séances de médiation variées et adaptées à différents besoins. Leur présence
+tranquille, leur capacité à créer des liens émotionnels et leur douceur naturelle en font des
+alliés précieux dans les interventions de médiation animale. Que ce soit pour des enfants,
+des adultes ou des personnes en situation de stress ou de souffrance, Méo et Ramsès sont
+capables d&#39;offrir une écoute silencieuse et un soutien réconfortant, dans un environnement
+où la sécurité et le bien-être de chacun sont primordiaux.
+    </p>
+    <p class="text-justify">
+      Dans chaque séance, Méo et Ramsès savent s’adapter, apportant à la fois calme et
+réconfort, et contribuant à rendre chaque moment avec eux unique et bénéfique. Leur rôle
+est essentiel pour apporter de la sérénité, améliorer le bien-être et faciliter la gestion des
+émotions dans un cadre de médiation par l&#39;animal.
+    </p>
+  </div>
+</div>
+    </span>
+    
+    <span class="showMoiCt cochonct" style="display:none;">
+      <div class="container d-flex align-items-center" data-aos="fade-up" >
+  <img src="assets/img/image0000001(1).jpg" class="testimonial-img" style="height:400px; margin-right:20px;" alt="">
+  <img src="assets/img/image0000001(2).jpg" class="testimonial-img" style="height:400px; margin-right:20px;" alt="">
+  <div>
+    <p class="text-justify">
+      Balthazar et Gaspard sont deux petits cochons d'Inde, chacun avec ses propres caractéristiques et qualités qui les rendent indispensables dans le cadre de la médiation par l'animal. Leur douceur, leur patience et leur nature sociable font d'eux des alliés précieux pour créer des liens, apaiser les tensions et offrir du réconfort à ceux qui en ont besoin.
+    </p>
+  </div>
+</div>
+    </span>
+    
+    <span class="showMoiCt oiseauct" style="display:none;">
+      <div class="container d-flex align-items-center" data-aos="fade-up" >
+  <img src="assets/img/IMG_5159.jpg" class="testimonial-img" style="height:400px; margin-right:20px;" alt="">
+  <div>
+    <p class="text-justify">
+      Coco, une calopsitte pleine de charme et de vivacité, est un compagnon unique pour la médiation par l'animal. Avec son plumage coloré et sa crête distinctive, elle attire immédiatement l'attention par sa beauté naturelle et son caractère attachant. Sa personnalité pétillante et joyeuse fait d'elle une alliée précieuse dans les séances où l'on cherche à apporter du dynamisme et de la légèreté.
+
+Coco incarne à la fois la vivacité et la douceur. Son esprit curieux et ses mouvements agiles apportent une énergie joyeuse à chaque interaction. Elle aime se poser sur les épaules ou les bras des personnes, créant une connexion immédiate, pleine de tendresse et d'affection. Sa compagnie est souvent source de sourires et de moments ludiques, apportant une touche de gaieté et de légèreté aux séances de médiation.
+    </p>
+  </div>
+</div>
+    </span>
+    
+    <span class="showMoiCt lapinct" style="display:none;">
+      <div class="container d-flex align-items-center" data-aos="fade-up" >
+  <img src="assets/img/IMG_4571.JPG" class="testimonial-img" style="height:400px; margin-right:20px;" alt="">
+  <img src="assets/img/image0000001.jpg" class="testimonial-img" style="height:400px; margin-right:20px;" alt="">
+  <div>
+    <p class="text-justify">
+      Cascade et Praline sont deux petites lapines au caractère doux et attentif, idéales pour les séances de médiation par l'animal. Leur présence calme et apaisante crée un environnement où chacun peut se sentir en sécurité et en confiance. Ces deux petites créatures, pleines de tendresse, apportent une touche de sérénité et de chaleur à toute interaction.
+    </p>
+  </div>
+</div>
+    </span>
+    
+    </section>
+
+    <!-- ======= Contact Section ======= -->
+    <section id=formations style="min-height:100vh;">
+    	<div class="container" data-aos="fade-up" align=center>
+        <div class="section-title" >
+          <h2>Formations à la médiation par l'animal</h2>
+        </div>
+
+<div class="container d-flex align-items-center" data-aos="fade-up" >
+  <a href="https://www.agatea.org/" target="_blank" title="Lien vers FIMAC">
+        <img src="assets/img/AGATEA.png" class="testimonial-img" style="height:250px; margin:20px;" alt="FIMAC">
+      </a>
+  <div>
+    <p class="text-justify">
+      La formation Agatéa : Chargée de projet en médiation par l’animal m’a dotée d’une expertise complète dans la gestion de projets de médiation, le travail avec les animaux et l’accompagnement des publics divers. Elle m’a permis d’acquérir des compétences pratiques et théoriques en gestion de projet, en relation avec les animaux, et en médiation thérapeutique et éducative, en mettant toujours l’accent sur le respect du bien-être des animaux et des participants. Ces compétences sont essentielles pour mener à bien des projets de médiation par l’animal dans des contextes variés.
+    </p>
+  </div>
+</div>
+
+<div class="container d-flex align-items-center" data-aos="fade-up" >
+  <a href="https://www.fimaccanin.fr/" target="_blank" title="Lien vers FIMAC">
+        <img src="assets/img/FIMAC.png" class="testimonial-img" style="height:160px; margin:20px;" alt="FIMAC">
+      </a>
+  <div>
+    <p class="text-justify">
+      La formation FIMAC : PECCRAM et LAC m’a permis d’acquérir une double expertise : celle de la prévention des morsures de chien à travers l’éducation du public, et celle de l’utilisation du chien comme médiateur dans les activités de lecture, apportant ainsi des bénéfices émotionnels et cognitifs aux participants. Ces compétences me permettent d’intervenir de manière sécurisée et bienveillante, en répondant aux besoins des publics variés et en favorisant une relation positive avec l’animal.
+    </p>
+  </div>
+</div>
+
+<div class="container d-flex align-items-center" data-aos="fade-up" >
+  <a href="https://www.mfr-guilliers.fr/" target="_blank" title="Lien vers FIMAC">
+        <img src="assets/img/ACACED.png" class="testimonial-img" style="height:132px; margin:20px;" alt="FIMAC">
+        
+      </a>
+  <div>
+    <p class="text-justify">
+      
+La formation ACACED m’a permis d'acquérir des connaissances approfondies concernant le bien-être des animaux de compagnie, notamment des chiens, des chats et des NAC. Elle permet une compréhension globale de leurs besoins physiques, comportementaux et émotionnels, et fournit les compétences nécessaires pour assurer leur gestion dans un cadre professionnel, notamment pour les activités de médiation animale. 
+    </p>
+  </div>
+</div>    
+    </section>
+
+
+    <section id="lieu">
+      <div class="section-title">
+          <h2>Lieu d'acceuil</h2>
+      </div>
+      <div class="container d-flex align-items-center" data-aos="fade-up" >
+    <img src="assets/img/image0000021.jpg" class="testimonial-img" style="height:400px; margin-right:20px;" alt="">
+    <img src="assets/img/IMG_0074.jpg" class="testimonial-img" style="height:400px; margin-right:20px;" alt="">
+    <img src="assets/img/IMG_5041.JPG" class="testimonial-img" style="height:400px; margin-right:20px;" alt="">
+    <img src="assets/img/IMG_3561.jpg" class="testimonial-img" style="height:400px; margin-right:20px;" alt="">
+    </div>
+    
+    <!-- ======= Portfolio Section =======  class="portfolio section-bg" style='min-height: 100vh;'-->
+    <section id="axes">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Axes de travail</h2>
+        </div>
+
+               
+    </section><!-- End Portfolio Section -->
+
+  </main><!-- End #main -->
+  	<section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+        </div>
+        <center>
+        <p class="text-justify">
+        <h4>Nathalie Gauvain</h4>
+        Chargée de projet en médiation par l'animal
+        <br><br>Tel : 06 75 48 57 10 
+        <br>Mail : <a href="mailto:nathalie.gauvain@sfr.fr">
+        nathalie.gauvain@sfr.fr</a></p>
+        <br>
+        </center>
+    </section>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>RIVAGES Normands 2100</h3>
+      <p>Recherches sur les Inondations Venant des Aquifères et Gestion des Eaux Salées</p>
+      
+<!--
+        <div class="social-links">
+        <a href="https://" target=social class="twitter"><i class="bx bxl-twitter"></i></a>     
+        <a href="https://" target=social  class="twitch"><i class="bx bxl-twitch"></i></a>
+        <a href="https://" target=social  class="youtube"><i class="bx bxl-youtube"></i></a>
+        <a href="https://" target=social  class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://" target=social  class="discord"><i class="bx bxl-discord"></i></a>
+        </div>
+        -->
+      
+      <div class="copyright">
+        &copy; Copyright <strong><span>Projet RIVAGES Normands 2100</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: [license-url] -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/ -->
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bracket/jquery.bracket.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <style type="text/css" data-typed-js-css="true">
+        .typed-cursor{
+          opacity: 1;
+        }
+        .typed-cursor.typed-cursor--blink{
+          animation: typedjsBlink 0.7s infinite;
+          -webkit-animation: typedjsBlink 0.7s infinite;
+                  animation: typedjsBlink 0.7s infinite;
+        }
+        @keyframes typedjsBlink{
+          50% { opacity: 0.0; }
+        }
+        @-webkit-keyframes typedjsBlink{
+          0% { opacity: 1; }
+          50% { opacity: 0.0; }
+          100% { opacity: 1; }
+        }
+      </style>
+<script>
+
+
+ 
+/* Edit function is called when team label is clicked */
+function edit_fn(container, data, doneCb) {
+  var input = $('<input type="text">')
+  input.val(data ? data.flag + ':' + data.name : '')
+  container.html(input)
+  input.focus()
+  input.blur(function() {
+    var inputValue = input.val()
+    if (inputValue.length === 0) {
+      doneCb(null); // Drop the team and replace with BYE
+    } else {
+      var flagAndName = inputValue.split(':') // Expects correct input
+      doneCb({flag: flagAndName[0], name: flagAndName[1]})
+    }
+  })
+}
+ 
+/* Render function is called for each team label when data is changed, data
+ * contains the data object given in init and belonging to this slot.
+ *
+ * 'state' is one of the following strings:
+ * - empty-bye: No data or score and there won't team advancing to this place
+ * - empty-tbd: No data or score yet. A team will advance here later
+ * - entry-no-score: Data available, but no score given yet
+ * - entry-default-win: Data available, score will never be given as opponent is BYE
+ * - entry-complete: Data and score available
+ */
+
+function render_fn(container, data, score, state) {
+  switch(state) {
+    case "empty-bye":
+      container.append("No team")
+      return;
+    case "empty-tbd":
+      container.append(" A venir ")
+      return;
+ 
+    case "entry-no-score":
+    case "entry-default-win":
+    case "entry-complete":
+      container.append('<img src="assets/img/png/'+data.flag+'.png" /> ').append(data.name)
+      return;
+  }
+}
+ 
+$(function() {
+
+
+  $(".cupSel").on( "click",  function() { 
+
+  	$('.cupSel').removeClass('cupSelected');
+  	$(this).addClass('cupSelected');
+
+  	cible = $(this).attr('rel');
+  	$('.numeroCoupe').hide();
+  	$('.'+cible).show();
+
+
+  });
+  
+  $(".teamBtn").on( "click",  function() { 
+
+  		$(".teamBtn-sel").removeClass("teamBtn-sel");
+  		$(this).addClass('teamBtn-sel');
+  		
+  		$(".teamDiv").hide()
+  		var rel = $(this).attr('rel');
+		$( "#teamCt"+rel ).show();
+	});
+
+	$(document).on("click", '.loadMoiBtn', function(event) { 
+    	lnk  = $(this).attr('data-filter');
+    	$('.portfolio-container').html('').fadeIn();
+    	const act = { section: lnk };
+    $.ajax({
+       url : 'jax.php',
+       type : 'POST',
+       data : act, 
+       success : function(code_html, statut) {
+           $('.portfolio-container').html(code_html);
+           //$(code_html).appendTo("#commentaires"); 
+           // On passe code_html à jQuery() qui va nous créer l'arbre DOM !
+
+       }, error : function(resultat, statut, erreur) {
+         
+       }, complete : function(resultat, statut) {
+
+       }
+    });
+
+    
+	});
+
+	$(".showMoi").on( "click",  function() { 
+  		$(".showMoiCt").hide()
+  		var rel = $(this).attr('data-filter');
+		$( '.'+rel+'ct' ).show();
+	});
+
+  })
+$(window).on('load', function() {
+    $('#woot').trigger('click');
+
+});
+
+$(".showMe").on( "click",  function() { 
+      $(".showMeCt").hide()
+      var rel = $(this).attr('data-filter');
+    $( '.'+rel+'ct' ).show();
+  });
+
+  </script>
+
+</body>
+
+</html>
