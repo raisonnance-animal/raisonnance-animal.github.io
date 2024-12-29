@@ -984,14 +984,14 @@ section {
 #contact{
   width: 100%;
   min-height: 100vh;
-  background: url("../img/sat_topo.png") top right no-repeat;
+  background: url("../img/IMG_20200411_110702.jpg") top right no-repeat;
   background-size: cover;
   position:relative;
 }
 
 #contact:before {
   content: "";
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.5);
   position: absolute;
   bottom: 0;
   top: 0;
